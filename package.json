@@ -1,6 +1,6 @@
 {
   "name": "loop-things",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "loop through commands in fun and amazing ways!",
   "main": "./bin/loop",
   "bin": {
