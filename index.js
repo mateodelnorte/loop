@@ -47,8 +47,10 @@ if (buffer) {
 const dirs = listDirectories(looprc, cwd);
 const commands = expandCommand(dirs, command);
 
-run(commands, (err, results) => {
-  console.log(results.reduce((prev, cur, index) => {
-    return `${prev}\n${chalk.green(dirs[index])}\n${cur}\n`; 
+run(commands, (err, commandOutputs) => {
+  console.log(commandOutputs.reduce((logMessage, commandOutput, index) => {
+    const color = commandOutput.error ? 'red' : 'green';
+    const output = commandOutput.output || commandOutput.error;
+    return `${logMessage}\n${chalk[color](dirs[index])}\n${output}\n`; 
   }, ''));
 });
