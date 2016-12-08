@@ -1,0 +1,30 @@
+{
+  "name": "loop-things",
+  "version": "0.0.0",
+  "description": "loop through commands in fun and amazing ways!",
+  "main": "./bin/loop",
+  "bin": {
+    "loop": "./bin/loop"
+  },
+  "scripts": {
+    "test": "make test"
+  },
+  "keywords": [
+    "loop",
+    "command",
+    "commands"
+  ],
+  "author": "hi@iammwattwalters.com",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mateodelnorte/loop-things.git"
+  }
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.1.4",
+    "concurrently": "^3.1.0",
+    "cross-env": "^3.1.3",
+    "debug": "^2.3.3",
+    "yargs": "^6.5.0"
+  }
+}
