@@ -6,6 +6,7 @@ const listDirectories = require('./lib/listDirectories');
 const path = require('path');
 const run = require('./lib/run');
 const util = require('util');
+const chalk = require('chalk');
 
 const LOOPRC = '.looprc';
 
@@ -47,7 +48,7 @@ const dirs = listDirectories(looprc, cwd);
 const commands = expandCommand(dirs, command);
 
 run(commands, (err, results) => {
-  console.log(results.reduce((prev, cur) => {
-    return `${prev}\n${cur}`; 
-  }));
+  console.log(results.reduce((prev, cur, index) => {
+    return `${prev}\n${chalk.green(dirs[index])}\n${cur}\n`; 
+  }, ''));
 });
