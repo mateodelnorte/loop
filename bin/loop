@@ -13,7 +13,48 @@ var argv = require('yargs')
     .default('cwd', process.cwd())
     .argv;
 
-const cwd = argv.cwd;
+if (argv.help || ! argv._.length) {
+  const usage = `
+
+    loop executes a command against child directories within its current working directory
+
+    usage:
+
+      loop [command]
+      loop ["command with multiple words in quotes"]
+      loop --cwd ../other/working/directory
+
+    examples: 
+
+      loop pwd
+      loop "git status"
+      loop "git checkout -b feature/new-feature"
+      loop "git push origin feature/new-feature"
+
+    .looprc: 
+
+      directories containing a .looprc json file may have extra behavior, determined by properties within the file:
+
+        ignore (type Array) any child directory names listed in ignore will be ignored and skipped from execution
+
+    example .looprc:
+
+    {
+      "ignore": [ ".git", ".vagrant", ".vscode", "ansible", "node_modules", "scripts" ]
+    }
+
+      `;
+  return console.log(usage);
+}
+
+var cwd = argv.cwd;
+
+if (cwd[0] !== '/') {
+  cwd = path.resolve(cwd);
+}
+
+debug(`running loop ${argv._} in cwd ${cwd}`);
+
 const command = argv._;
 
 if (argv.init) {
