@@ -1,6 +1,6 @@
 {
   "name": "loop-things",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "description": "loop through commands in fun and amazing ways!",
   "main": "./index.js",
   "bin": {
@@ -28,6 +28,7 @@
     "debug": "^2.3.3",
     "find-module-bin": "0.0.0",
     "global-paths": "^1.0.0",
+    "lodash": "^4.17.2",
     "yargs": "^6.5.0"
   }
 }
