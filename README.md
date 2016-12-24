@@ -2,6 +2,39 @@
 
 loop-things expands commands to work simultaneously against any number of subdirectories in your current working path. Want to perform a `git status` on 15 projects at once? With loop-things, you can do it!
 
+```
+    loop executes a command against child directories within its current working directory
+
+    usage:
+
+      loop [command]                                      - execute a command against all child dirs
+      loop ["command with multiple words in quotes"]      - execute a multi-word command against all child dirs
+      loop --cwd ../other/working/directory               - execute a command against all child dirs, setting the working directory to another directory
+      loop --include comma,delimited,list,of,dirs         - execute a command against all child dirs including a number of directories which might otherwise be ignored, for instance, in .looprc
+      loop --include-only comma,delimited,list,of,dirs    - execute a command against all child dirs, ignoring .looprc, and only including the specified directories
+      loop --exclude comma,delimited,list,of,dirs         - execute a command against all child dirs, excluding the specified directories
+      loop --exclude-only comma,delimited,list,of,dirs    - execute a command against all child dirs, excluding only the specified directories
+
+    examples:
+
+      loop pwd
+      loop "git status"
+      loop "git checkout -b feature/new-feature"
+      loop "git push origin feature/new-feature"
+
+    .looprc:
+
+      directories containing a .looprc json file may have extra behavior, determined by properties within the file:
+
+        ignore (type Array) any child directory names listed in ignore will be ignored and skipped from execution
+
+    example .looprc:
+
+    {
+      "ignore": [ ".git", ".vagrant", ".vscode", "ansible", "node_modules", "scripts" ]
+    }
+```
+
 ## Installation
 
 `npm install -g loop-things`
