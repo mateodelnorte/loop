@@ -13,7 +13,7 @@ var argv = require('yargs')
     .default('cwd', process.cwd())
     .argv;
 
-if (argv.help || ! argv._.length) {
+if (argv.help || ! argv.init && ! argv._.length) {
   const usage = `
 
     loop executes a command against child directories within its current working directory
@@ -27,6 +27,7 @@ if (argv.help || ! argv._.length) {
       loop --include-only comma,delimited,list,of,dirs    - execute a command against all child dirs, ignoring .looprc, and only including the specified directories
       loop --exclude comma,delimited,list,of,dirs         - execute a command against all child dirs, excluding the specified directories
       loop --exclude-only comma,delimited,list,of,dirs    - execute a command against all child dirs, excluding only the specified directories
+      loop --init                                         - create a .looprc file in the current working directory
 
     examples: 
 
@@ -62,7 +63,7 @@ debug(`running loop ${argv._} in cwd ${cwd}`);
 const command = argv._;
 
 if (argv.init) {
-  copyFile(path.resolve(__dirname, 'support', LOOPRC), path.resolve(cwd, LOOPRC));
+  copyFile(path.resolve(__dirname, '..', 'support', LOOPRC), path.resolve(cwd, LOOPRC));
   console.log(`created ${LOOPRC} at ${cwd}`)
   return;
 }

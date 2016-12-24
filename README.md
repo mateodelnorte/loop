@@ -14,6 +14,7 @@ loop-things expands commands to work simultaneously against any number of subdir
       loop --include-only comma,delimited,list,of,dirs    - execute a command against all child dirs, ignoring .looprc, and only including the specified directories
       loop --exclude comma,delimited,list,of,dirs         - execute a command against all child dirs, excluding the specified directories
       loop --exclude-only comma,delimited,list,of,dirs    - execute a command against all child dirs, excluding only the specified directories
+      loop --init                                         - creates a .looprc in the current working directory
 
     examples:
 
