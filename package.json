@@ -7,7 +7,7 @@
     "loop": "./bin/loop"
   },
   "scripts": {
-    "test": "make test"
+    "test": "mocha"
   },
   "keywords": [
     "loop",
@@ -30,6 +30,8 @@
     "global-paths": "^1.0.0",
     "lodash": "^4.17.2",
     "meta-exec": "0.0.0",
+    "mocha": "^3.2.0",
+    "should": "^11.1.2",
     "yargs": "^6.5.0"
   }
 }

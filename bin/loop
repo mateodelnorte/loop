@@ -1,5 +1,6 @@
 #!/usr/bin/env node
- 
+
+const getArgsForFlag = require('../lib/getArgsForFlag'); 
 const copyFile = require('../lib/copyFile');
 const debug = require('debug')('loop');
 const fs = require('fs');
@@ -60,7 +61,7 @@ if (cwd[0] !== '/') {
 
 debug(`running loop ${argv._} in cwd ${cwd}`);
 
-const command = argv._;
+const command = process.argv[2];
 
 if (argv.init) {
   copyFile(path.resolve(__dirname, '..', 'support', LOOPRC), path.resolve(cwd, LOOPRC));
@@ -93,16 +94,8 @@ loop({
   dir: cwd,
   command,
   looprc,
-  exclude: argv.exclude ? argv.exclude.split(',').map((dir) => {
-    return path.resolve(cwd, dir);
-  }) : undefined,
-  excludeOnly: argv['exclude-only'] ? argv['exclude-only'].split(',').map((dir) => {
-    return path.resolve(cwd, dir);
-  }) : undefined,
-  include: argv.include ? argv.include.split(',').map((dir) => {
-    return path.resolve(cwd, dir);
-  }) : undefined,
-  includeOnly:  argv['include-only'] ? argv['include-only'].split(',').map((dir) => {
-    return path.resolve(cwd, dir);
-  }) : undefined
+  exclude: getArgsForFlag(process.argv, '--exclude'),
+  excludeOnly: getArgsForFlag(process.argv, '--exclude-only'),
+  include: getArgsForFlag(process.argv, '--include'),
+  includeOnly: getArgsForFlag(process.argv, '--include-only')
 });
