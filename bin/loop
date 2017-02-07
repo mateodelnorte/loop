@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-const getArgsForFlag = require('../lib/getArgsForFlag'); 
 const copyFile = require('../lib/copyFile');
 const debug = require('debug')('loop');
 const fs = require('fs');
@@ -94,8 +93,4 @@ loop({
   dir: cwd,
   command,
   looprc,
-  exclude: getArgsForFlag(process.argv, '--exclude'),
-  excludeOnly: getArgsForFlag(process.argv, '--exclude-only'),
-  include: getArgsForFlag(process.argv, '--include'),
-  includeOnly: getArgsForFlag(process.argv, '--include-only')
 });
