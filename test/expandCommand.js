@@ -12,10 +12,10 @@ describe('expandCommand', function () {
     const secondCommand = commands[1]
     
     firstCommand.should.have.property('dir', '/Users/mateodelnorte/development/meta/plugins/loop-things/bin');
-    firstCommand.should.have.property('command', '"/Users/mateodelnorte/development/meta/node_modules/.bin/cross-env" pwd');
+    firstCommand.should.have.property('command', 'pwd');
 
     secondCommand.should.have.property('dir', '/Users/mateodelnorte/development/meta/plugins/loop-things/lib');
-    secondCommand.should.have.property('command', '"/Users/mateodelnorte/development/meta/node_modules/.bin/cross-env" pwd');
+    secondCommand.should.have.property('command', 'pwd');
 
   });
 
