@@ -1,6 +1,6 @@
 {
-  "name": "loop-things",
-  "version": "0.0.23",
+  "name": "loop",
+  "version": "3.0.0",
   "description": "loop through commands in fun and amazing ways!",
   "main": "./index.js",
   "bin": {
@@ -17,7 +17,7 @@
   "author": "hi@iammwattwalters.com",
   "repository": {
     "type": "git",
-    "url": "git://github.com/mateodelnorte/loop-things.git"
+    "url": "git://github.com/mateodelnorte/loop.git"
   },
   "license": "ISC",
   "dependencies": {

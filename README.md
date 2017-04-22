@@ -1,6 +1,6 @@
-# loop-things
+# loop
 
-loop-things expands commands to work simultaneously against any number of subdirectories in your current working path. Want to perform a `git status` on 15 projects at once? With loop-things, you can do it!
+loop expands commands to work simultaneously against any number of subdirectories in your current working path. Want to perform a `git status` on 15 projects at once? With loop, you can do it!
 
 ```
     loop executes a command against child directories within its current working directory
@@ -38,11 +38,11 @@ loop-things expands commands to work simultaneously against any number of subdir
 
 ## Installation
 
-`npm install -g loop-things`
+`npm install -g loop`
 
 ## Basic Usage
 
-loop-things installs a `loop` command which you can leverage from the command line, in your package.json scripts, etc. The syntax is super simple. Just `loop [your command]`. If the command you wish to run consists of multiple words, place the command in quotes: `loop "your --you | really -R | long -o | command"`. 
+loop installs a `loop` command which you can leverage from the command line, in your package.json scripts, etc. The syntax is super simple. Just `loop [your command]`. If the command you wish to run consists of multiple words, place the command in quotes: `loop "your --you | really -R | long -o | command"`. 
 
 In a folder with the following structure: 
 ```

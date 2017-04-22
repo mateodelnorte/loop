@@ -11,10 +11,10 @@ describe('expandCommand', function () {
     const firstCommand = commands[0];
     const secondCommand = commands[1]
     
-    firstCommand.should.have.property('dir', '/Users/mateodelnorte/development/meta/plugins/loop-things/bin');
+    firstCommand.should.have.property('dir', '/Users/mateodelnorte/development/meta/plugins/loop/bin');
     firstCommand.should.have.property('command', 'pwd');
 
-    secondCommand.should.have.property('dir', '/Users/mateodelnorte/development/meta/plugins/loop-things/lib');
+    secondCommand.should.have.property('dir', '/Users/mateodelnorte/development/meta/plugins/loop/lib');
     secondCommand.should.have.property('command', 'pwd');
 
   });
