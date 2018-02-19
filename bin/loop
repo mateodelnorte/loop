@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 const copyFile = require('../lib/copyFile');
-const debug = require('debug')('loop');
+const debug = require('debug')('@essential-projects/loop');
 const fs = require('fs');
 const loop = require('../lib/loop');
 const path = require('path');
