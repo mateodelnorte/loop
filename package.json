@@ -1,5 +1,5 @@
 {
-  "name": "loop",
+  "name": "@essential-projects/loop",
   "version": "3.0.2",
   "description": "loop through commands in fun and amazing ways!",
   "main": "./index.js",
