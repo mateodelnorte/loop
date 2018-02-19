@@ -1,5 +1,8 @@
 {
   "name": "@essential-projects/loop",
+  "publishConfig": {
+    "registry": "https://www.npmjs.com"
+  },
   "version": "3.0.2",
   "description": "loop through commands in fun and amazing ways!",
   "main": "./index.js",
