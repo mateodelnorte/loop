@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 const copyFile = require('../lib/copyFile');
-const debug = require('debug')('@essential-projects/loop');
+const debug = require('debug')('loop');
 const fs = require('fs');
 const loop = require('../lib/loop');
 const path = require('path');
@@ -61,6 +61,8 @@ if (cwd[0] !== '/') {
 debug(`running loop ${argv._} in cwd ${cwd}`);
 
 const command = process.argv[2];
+const exitOnError = process.argv.indexOf('--exit-on-error') >= 0;
+const exitOnAggregatedError = process.argv.indexOf('--exit-on-aggregated-error') >= 0;
 
 if (argv.init) {
   copyFile(path.resolve(__dirname, '..', 'support', LOOPRC), path.resolve(cwd, LOOPRC));
@@ -92,5 +94,12 @@ if (buffer) {
 loop({
   dir: cwd,
   command,
+  exitOnError,
+  exitOnAggregatedError,
   looprc,
+}, (errorOccured) => {
+  if (exitOnAggregatedError && errorOccured) {
+    console.log('an error occured during loop execution - exiting process');
+    process.exit(1);
+  }
 });
