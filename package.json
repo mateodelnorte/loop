@@ -1,8 +1,5 @@
 {
   "name": "loop",
-  "publishConfig": {
-    "registry": "https://www.npmjs.com"
-  },
   "version": "3.0.6",
   "description": "loop through commands in fun and amazing ways!",
   "main": "./index.js",
