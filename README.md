@@ -1,5 +1,7 @@
 # loop
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/mateodelnorte/loop.svg)](https://greenkeeper.io/)
+
 loop expands commands to work simultaneously against any number of subdirectories in your current working path. Want to perform a `git status` on 15 projects at once? With loop, you can do it!
 
 ```
