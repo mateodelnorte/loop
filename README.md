@@ -1,4 +1,5 @@
 # loop
+[![Build Status](https://travis-ci.com/mateodelnorte/loop.svg?branch=master)](https://travis-ci.com/mateodelnorte/loop)
 
 loop expands commands to work simultaneously against any number of subdirectories in your current working path. Want to perform a `git status` on 15 projects at once? With loop, you can do it!
 
