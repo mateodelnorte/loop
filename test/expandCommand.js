@@ -1,6 +1,7 @@
 const expandCommand = require('../lib/expandCommand');
 const path = require('path');
 const should = require('should');
+const { expect } = require('chai');
 
 describe('expandCommand', function () {
 
@@ -11,10 +12,11 @@ describe('expandCommand', function () {
     const firstCommand = commands[0];
     const secondCommand = commands[1]
     
-    firstCommand.should.have.property('dir', '/Users/mateodelnorte/development/meta/plugins/loop/bin');
+    // firstCommand.should.have.property('dir', 'loop/bin');
+    expect(/\/loop\/bin/.test(firstCommand.dir)).to.equal(true);
     firstCommand.should.have.property('command', 'pwd');
 
-    secondCommand.should.have.property('dir', '/Users/mateodelnorte/development/meta/plugins/loop/lib');
+    expect(/\/loop\/lib/.test(secondCommand.dir)).to.equal(true);
     secondCommand.should.have.property('command', 'pwd');
 
   });
