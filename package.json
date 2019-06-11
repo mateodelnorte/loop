@@ -7,7 +7,19 @@
     "loop": "./bin/loop"
   },
   "scripts": {
-    "test": "mocha"
+    "commit": "git-cz",
+    "lint": "prettier --write \"bin/*\" index.js",
+    "test": "npm run test-jest && npm run test-mocha",
+    "test-jest": "jest --config jest.json --coverage",
+    "test:coverage": "jest --config jest.json --coverage",
+    "test:watch": "jest --config jest.json --watch",
+    "test-mocha": "mocha"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "pretty-quick --staged"
+    }
   },
   "keywords": [
     "loop",
@@ -26,11 +38,19 @@
     "debug": "^4.1.0",
     "lodash": "^4.17.2",
     "meta-exec": "^1.0.0",
-    "mocha": "^6.0.0",
     "should": "^13.2.3",
     "yargs": "^13.0.0"
   },
   "devDependencies": {
-    "chai": "4.2.0"
+    "@commitlint/cli": "^8.0.0",
+    "@commitlint/config-conventional": "^8.0.0",
+    "chai": "4.2.0",
+    "commitizen": "^3.1.1",
+    "cz-conventional-changelog": "^2.1.0",
+    "husky": "^2.4.0",
+    "jest": "^24.8.0",
+    "mocha": "^6.0.0",
+    "prettier": "^1.18.2",
+    "pretty-quick": "^1.11.0"
   }
 }

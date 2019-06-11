@@ -9,11 +9,9 @@ const util = require('util');
 
 const LOOPRC = '.looprc';
 
-var argv = require('yargs')
-    .default('cwd', process.cwd())
-    .argv;
+var argv = require('yargs').default('cwd', process.cwd()).argv;
 
-if (argv.help || ! argv.init && ! argv._.length) {
+if (argv.help || (!argv.init && !argv._.length)) {
   const usage = `
 
     loop executes a command against child directories within its current working directory
@@ -66,11 +64,11 @@ const exitOnAggregateError = process.argv.indexOf('--exit-on-aggregated-error') 
 
 if (argv.init) {
   copyFile(path.resolve(__dirname, '..', 'support', LOOPRC), path.resolve(cwd, LOOPRC));
-  console.log(`created ${LOOPRC} at ${cwd}`)
+  console.log(`created ${LOOPRC} at ${cwd}`);
   return;
 }
 
-var looprc = null; 
+var looprc = null;
 var buffer = null;
 
 const looprcLocation = path.join(cwd, '.looprc');
@@ -91,15 +89,18 @@ if (buffer) {
   }
 }
 
-loop({
-  dir: cwd,
-  command,
-  exitOnError,
-  exitOnAggregateError,
-  looprc,
-}, (errorOccured) => {
-  if (exitOnAggregateError && errorOccured) {
-    console.log('an error occured during loop execution - exiting process');
-    process.exit(1);
+loop(
+  {
+    dir: cwd,
+    command,
+    exitOnError,
+    exitOnAggregateError,
+    looprc,
+  },
+  errorOccured => {
+    if (exitOnAggregateError && errorOccured) {
+      console.log('an error occured during loop execution - exiting process');
+      process.exit(1);
+    }
   }
-});
+);

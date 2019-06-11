@@ -1,8 +1,7 @@
 language: node_js
 node_js:
-  - 8
   - 10
-  - 11
+  - 12
 
 notifications:
   email: false
@@ -10,7 +9,7 @@ notifications:
 before_install:
   - npm install -g codecov
 script:
-  - npm run test
+  - npm test
   - codecov
 
 branches:
