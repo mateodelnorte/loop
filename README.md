@@ -13,6 +13,7 @@ loop expands commands to work simultaneously against any number of subdirectorie
       loop --cwd ../other/working/directory               - execute a command against all child dirs, setting the working directory to another directory
       loop --include comma,delimited,list,of,dirs         - execute a command against all child dirs including a number of directories which might otherwise be ignored, for instance, in .looprc
       loop --include-only comma,delimited,list,of,dirs    - execute a command against all child dirs, ignoring .looprc, and only including the specified directories
+      loop --include-pattern 'regexp'                     - execute a command against all child dirs that match the regular expression
       loop --exclude comma,delimited,list,of,dirs         - execute a command against all child dirs, excluding the specified directories
       loop --exclude-only comma,delimited,list,of,dirs    - execute a command against all child dirs, excluding only the specified directories
       loop --init                                         - creates a .looprc in the current working directory

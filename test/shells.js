@@ -72,6 +72,18 @@ describe('shells', function() {
         });
       });
 
+      describe('--include-pattern', function() {
+        it('should run a command only for the directories that match the expression', function() {
+          return this.loop("pwd --include-pattern 'hello-.*'").then(results => {
+            results.should.containEql('hello-foo-bar ✓');
+            results.should.containEql('hello-world ✓');
+            results.should.not.containEql('docs ✓');
+            results.should.not.containEql('lib ✓');
+            results.should.not.containEql('test ✓');
+          });
+        });
+      });
+
       describe('--exclude-only', function() {
         it('should run a command for all directories except the ones specified', function() {
           return this.loop('pwd --exclude-only docs,lib').then(results => {
