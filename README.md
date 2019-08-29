@@ -16,6 +16,7 @@ loop expands commands to work simultaneously against any number of subdirectorie
       loop --include-pattern 'regexp'                     - execute a command against all child dirs that match the regular expression
       loop --exclude comma,delimited,list,of,dirs         - execute a command against all child dirs, excluding the specified directories
       loop --exclude-only comma,delimited,list,of,dirs    - execute a command against all child dirs, excluding only the specified directories
+      loop --exclude-pattern 'regexp'                     - execute a command against all child dirs, excluding directories that match the regular expression
       loop --init                                         - creates a .looprc in the current working directory
 
     examples:

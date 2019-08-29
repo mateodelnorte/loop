@@ -95,6 +95,18 @@ describe('shells', function() {
           });
         });
       });
+
+      describe('--exclude-pattern', function() {
+        it('should run a command for all directories except the ones that match the expression', function() {
+          return this.loop("pwd --exclude-pattern 'hello-.*'").then(results => {
+            results.should.containEql('docs ✓');
+            results.should.containEql('lib ✓');
+            results.should.containEql('test ✓');
+            results.should.not.containEql('hello-foo-bar ✓');
+            results.should.not.containEql('hello-world ✓');
+          });
+        });
+      });
     });
   });
 });
