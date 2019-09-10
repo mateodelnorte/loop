@@ -39,7 +39,7 @@
     "lodash": "^4.17.2",
     "meta-exec": "^1.4.1",
     "should": "^13.2.3",
-    "yargs": "^13.0.0"
+    "yargs": "^14.0.0"
   },
   "devDependencies": {
     "@commitlint/cli": "8.0.0",
