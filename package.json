@@ -48,7 +48,7 @@
     "commitizen": "3.1.2",
     "cz-conventional-changelog": "2.1.0",
     "husky": "2.7.0",
-    "jest": "24.9.0",
+    "jest": "26.0.0",
     "mkdirp": "0.5.5",
     "mocha": "6.2.3",
     "prettier": "1.19.1",
