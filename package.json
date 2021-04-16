@@ -47,7 +47,7 @@
     "chai": "4.3.4",
     "commitizen": "3.1.2",
     "cz-conventional-changelog": "2.1.0",
-    "husky": "2.7.0",
+    "husky": "6.0.0",
     "jest": "26.6.3",
     "mkdirp": "0.5.5",
     "mocha": "6.2.3",
