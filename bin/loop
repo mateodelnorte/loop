@@ -97,7 +97,7 @@ loop(
     exitOnAggregateError,
     looprc,
   },
-  errorOccured => {
+  (errorOccured) => {
     if (exitOnAggregateError && errorOccured) {
       console.log('an error occured during loop execution - exiting process');
       process.exit(1);
