@@ -15,12 +15,6 @@
     "test:watch": "jest --config jest.json --watch",
     "test-mocha": "mocha"
   },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "pretty-quick --staged"
-    }
-  },
   "keywords": [
     "loop",
     "command",
@@ -45,8 +39,8 @@
     "@commitlint/cli": "9.1.2",
     "@commitlint/config-conventional": "10.0.0",
     "chai": "4.3.4",
-    "commitizen": "3.1.2",
-    "cz-conventional-changelog": "2.1.0",
+    "commitizen": "4.2.3",
+    "cz-conventional-changelog": "3.3.0",
     "husky": "2.7.0",
     "jest": "26.6.3",
     "mkdirp": "0.5.5",
