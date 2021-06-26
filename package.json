@@ -41,7 +41,7 @@
     "chai": "4.3.4",
     "husky": "6.0.0",
     "jest": "26.6.3",
-    "mkdirp": "0.5.5",
+    "mkdirp": "1.0.4",
     "mocha": "6.2.3",
     "prettier": "2.3.2",
     "pretty-quick": "3.1.1",
