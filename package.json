@@ -40,7 +40,7 @@
     "@commitlint/config-conventional": "12.1.4",
     "chai": "4.3.4",
     "husky": "6.0.0",
-    "jest": "26.6.3",
+    "jest": "27.0.6",
     "mkdirp": "0.5.5",
     "mocha": "6.2.3",
     "prettier": "2.3.2",
