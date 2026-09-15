@@ -36,8 +36,8 @@
     "yargs": "^14.2.3"
   },
   "devDependencies": {
-    "@commitlint/cli": "12.1.4",
-    "@commitlint/config-conventional": "12.1.4",
+    "@commitlint/cli": "21.2.2",
+    "@commitlint/config-conventional": "21.2.2",
     "chai": "4.3.6",
     "husky": "6.0.0",
     "jest": "26.6.3",
